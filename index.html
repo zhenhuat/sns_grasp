@@ -518,7 +518,7 @@
     <div class="container">
         <div class="header">
             <h1>3D 手-物交互评分系统</h1>
-            <p>评估四种手-相机交互方法的性能表现<br>
+            <p>评估四种手-物交互方法的性能表现<br>
             样本范围: 0-2075  | 随机抽取: 50个样本</p>
         </div>
 
@@ -593,15 +593,15 @@
             
             <div class="help-section">
                 <h3>评估说明</h3>
-                <p><strong>Hold 模式:</strong> 评估手部握持相机的姿态，关注稳定性和自然性</p>
-                <p><strong>Use 模式:</strong> 评估手部操作相机的功能性，关注可用性和舒适度</p>
+                <p><strong>Hold 模式:</strong> 评估手部握持物体的姿态，关注稳定性和自然性</p>
+                <p><strong>Use 模式:</strong> 评估手部操作物体的功能性，关注可用性和舒适度</p>
             </div>
 
             <div class="help-section">
                 <h3>操作流程</h3>
                 <p>1. 点击"开始评估"开始评估流程</p>
                 <p>2. 选择当前模式（Hold/Use）</p>
-                <p>3. 观察四种方法的3D手-相机交互模型</p>
+                <p>3. 观察四种方法的3D手-物体交互模型</p>
                 <p>4. 选择1-3个表现最佳的方法</p>
                 <p>5. 点击"下一个样本"继续</p>
             </div>
@@ -697,7 +697,7 @@
                 this.scene = new THREE.Scene();
                 this.scene.background = new THREE.Color(0xf0f0f0);
 
-                // 创建相机
+                // 创建物体
                 this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
                 this.camera.position.set(2, 2, 2);
 
@@ -951,10 +951,10 @@
                     group.add(finger);
                 }
                 
-                // 创建相机模型
+                // 创建物体模型
                 const cameraMaterial = new THREE.MeshPhongMaterial({ color: methodColor });
                 
-                // 相机主体
+                // 物体主体
                 const cameraBodyGeometry = new THREE.BoxGeometry(0.4, 0.3, 0.2);
                 const cameraBody = new THREE.Mesh(cameraBodyGeometry, cameraMaterial);
                 
@@ -1014,7 +1014,7 @@
             evaluationResults = [];
             isEvaluationActive = false;
             
-            showMessage('系统初始化完成！点击"开始评估"开始手-相机交互评估。', 'info');
+            showMessage('系统初始化完成！点击"开始评估"开始手-物体交互评估。', 'info');
             
             // 创建评估网格
             createEvaluationGrid();
@@ -1062,7 +1062,7 @@
             // 加载第一个样本
             loadCurrentSample();
             
-            showMessage('评估已开始！观察手-相机交互模型并选择表现最佳的方法。', 'success');
+            showMessage('评估已开始！观察手-物体交互模型并选择表现最佳的方法。', 'success');
         }
 
         // 加载当前样本
