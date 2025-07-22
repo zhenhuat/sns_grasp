@@ -724,8 +724,8 @@
                 this.scene.add(ambientLight);
 
                 // 添加主光源
-                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-                directionalLight.position.set(10, 10, 5);
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+                directionalLight.position.set(-10, -10, 5);
                 directionalLight.castShadow = true;
                 directionalLight.shadow.mapSize.width = 2048;
                 directionalLight.shadow.mapSize.height = 2048;
