@@ -1073,6 +1073,7 @@
             }
             
             const sampleId = samples[currentSampleIndex];
+            const paddedId = String(sampleId).padStart(4, '0');
             console.log(`🔄 加载样本 ${sampleId} (${currentMode}模式)`);
             updateUI();
             
@@ -1090,7 +1091,7 @@
             // 为每个方法加载3D模型
             const promises = methods.map(async method => {
                 const viewerId = `viewer-${method}`;
-                const modelPath = `viz_mesh/${method}/${currentMode}/sample_${sampleId}.obj`;
+                const modelPath = `viz_mesh/${method}/${currentMode}/sample_${paddedId}.obj`;
                 
                 console.log(`🎯 正在加载 ${method} 样本 ${sampleId}:`, modelPath);
                 
