@@ -665,7 +665,7 @@
         // 生成随机样本ID
         function generateRandomSamples(count = 50) {
             const allIds = [];
-            for (let i = 1970; i <= 2075; i++) {
+            for (let i = 0; i <= 2075; i++) {
                 allIds.push(i);
             }
             
@@ -1424,7 +1424,7 @@
                         skippedSamples: evaluationResults.filter(r => r.skipped).length,
                         modes: ['hold', 'use'],
                         methods: methods,
-                        sampleRange: '1970-2075'
+                        sampleRange: '0-2075'
                     },
                     samples: samples,
                     results: evaluationResults,
